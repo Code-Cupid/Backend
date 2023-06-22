@@ -1,0 +1,2 @@
+class ReadmesController < ApplicationController
+end
