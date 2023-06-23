@@ -6,6 +6,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(resource_name, resource)
     render json: resource
   end
-  def index
-  end
 end
