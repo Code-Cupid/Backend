@@ -1,6 +1,5 @@
 user1 = User.where(email: "test1@example.com").first_or_create(password: "password", password_confirmation: "password")
-user2 = User.where(email: "test2@example.com").first_or_create(password: "password", password_confirmation: "password")
-user3 = User.where(email: "test3@example.com").first_or_create(password: "password", password_confirmation: "password")
+
 readmes_all = [
   {
     name:'Rashaan',
@@ -33,16 +32,6 @@ readmes_all = [
 
 readmes_all.each do |readme|
   user1.readmes.create(readme)
-  p "creating: #{readme}"
-end
-
-readmes_all.each do |readme|
-  user2.readmes.create(readme)
-  p "creating: #{readme}"
-end
-
-readmes_all.each do |readme|
-  user3.readmes.create(readme)
   p "creating: #{readme}"
 end
 
