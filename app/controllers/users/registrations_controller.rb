@@ -4,6 +4,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
     resource.save
     sign_in(resource_name, resource)
-    render json: resource
+    render json: resource 
   end
 end
