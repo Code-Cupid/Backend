@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
-  resources :readmes
-  devise_for :users,
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  
-  # Defines the root path route ("/")
+  # Custom paths for Devise
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  },
   path: '',
   path_names: {
     sign_in: 'login',
     sign_out: 'logout',
     registration: 'signup'
-  },
-  controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
   }
+
+  # Nested routes for readmes inside users
+  resources :users do
+    resources :readmes
   end
+  
+  # Routes for readmes not nested inside users
+  resources :readmes
+end
