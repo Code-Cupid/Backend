@@ -239,3 +239,9 @@ describe "DELETE /destroy" do
       expect(Readme.count).to eq(1)
     end
   end
+
+  private
+  
+  def readme_params
+    params.require(:readme).permit(:name, :age, :gender, :gender_pref, :location, :programming_language, :image, :user_id)
+  end
